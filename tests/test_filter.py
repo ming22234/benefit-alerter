@@ -1,7 +1,39 @@
 from datetime import date
 from src.models import BenefitItem
 from src.config_loader import calculate_age
-from src.filter import filter_and_classify_benefits
+from src.filter import deduplicate_similar_items, filter_and_classify_benefits
+
+
+def test_deduplicate_similar_items():
+    items = [
+        BenefitItem(
+            id="n1",
+            title="청년미래적금 2차 신청 68.8만···11월16일 계좌개설 시작",
+            category="청년/금융",
+            organization="뉴스1",
+            summary="요약",
+            apply_period_text="상시",
+        ),
+        BenefitItem(
+            id="n2",
+            title="청년미래적금 2차 신청자 68만8000명…11월 16일부터 계좌 개설",
+            category="청년/금융",
+            organization="뉴스2",
+            summary="요약",
+            apply_period_text="상시",
+        ),
+        BenefitItem(
+            id="n3",
+            title="베일 벗은 ‘청년미래적금’…청년층 관심 속 신청 시작",
+            category="청년/금융",
+            organization="뉴스3",
+            summary="요약",
+            apply_period_text="상시",
+        ),
+    ]
+    deduped = deduplicate_similar_items(items)
+    assert len(deduped) == 1
+    assert deduped[0].id == "n1"
 
 
 def test_calculate_age():

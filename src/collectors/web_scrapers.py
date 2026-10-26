@@ -1,5 +1,6 @@
 from datetime import date
 from email.utils import parsedate_to_datetime
+import hashlib
 import re
 from typing import List
 from urllib.parse import quote
@@ -7,6 +8,11 @@ import xml.etree.ElementTree as ET
 import requests
 from bs4 import BeautifulSoup
 from src.models import BenefitItem
+
+
+def stable_hash_id(prefix: str, text: str) -> str:
+    digest = hashlib.md5(text.strip().encode("utf-8")).hexdigest()[:10]
+    return f"{prefix}_{digest}"
 
 HEADERS = {
     "User-Agent": (
@@ -83,7 +89,7 @@ def scrape_wevity_scholarships_and_support() -> List[BenefitItem]:
                     continue
 
                 ix_match = re.search(r"ix=(\d+)", href)
-                item_id = f"wevity_{ix_match.group(1)}" if ix_match else f"wevity_{abs(hash(raw_title)) % 1000000}"
+                item_id = f"wevity_{ix_match.group(1)}" if ix_match else stable_hash_id("wevity", raw_title)
                 if item_id in seen_local:
                     continue
                 seen_local.add(item_id)
@@ -161,7 +167,7 @@ def scrape_policy_news_rss(sido: str = "", sigungu: str = "") -> List[BenefitIte
 
                 default_reg = f"{sido} {sigungu}".strip() if category == "지자체지원" and sido else "전국"
                 detected_region = detect_region_from_title(clean_title, default_region=default_reg)
-                item_id = f"news_{abs(hash(clean_title)) % 10000000}"
+                item_id = stable_hash_id("news", clean_title)
 
                 items.append(
                     BenefitItem(
