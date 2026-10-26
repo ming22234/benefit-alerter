@@ -62,6 +62,8 @@ def main() -> None:
         seen_ids.add(item.id)
     for item in classified.currently_open:
         seen_ids.add(item.id)
+    for item in classified.reference_news:
+        seen_ids.add(item.id)
     save_seen_ids(SEEN_PATH, seen_ids)
 
     print(

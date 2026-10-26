@@ -1,41 +1,67 @@
-📢 [2026-10-27 오늘의 맞춤 혜택 브리핑]
-(필터 기준: 만 32세 / 경기 수원시 영통구 + 전국 공통)
-────────────────────────────
+📢 <b>[2026-10-27 내 맞춤 혜택 브리핑]</b>
+👤 기준: <b>만 32세 · 경기 수원시 영통구</b> (+전국 공통)
+────────────────────
 
-🔥 1. 새로 발견/오픈한 혜택 (4건)
+🔥 <b>1. 오늘 새로 추가된 혜택 (9건)</b>
 
-⭐ [청년/금융] 청년미래적금 2차 신청 68.8만···11월16일 계좌개설 시작 (상시)
-  - 기관: 뉴스프리존 (전국)
-  - 내용: 최근 7일 내 발표된 신규 신청/모집 공고 소식
-  - 기간: 공고 발표일: 2026-10-19 (상세 일정 링크 확인)
-  - 링크: https://news.google.com/rss/articles/CBMic0FVX3lxTE9jQ2x0c05qVnhmYS1mYjJydWgwOWNxbkZxUzZmenpCeVJyMmZSYXNUbnNud09rZ0tPS0lLbTF3ZlVnYjQyNUtWQXRRSTAtdV9TT2FEWHNBMi1tMktlZEZtWG5XbUY2dDB4Qlo0WTc2YkZibDDSAXdBVV95cUxQLXpmZ1RWMmZTTFdiYWZfVXdHMjZVYUtOREZ3dTlLQXFaenNuQjA3OVBSSE5BY0ZjNEhsa1p3cGJnTnpiZjlBaTRLRFI1T3lfNUxmXzRqS0ROb1pGN0gtNlR6R1dERFduVWVKOFE1ZkNRZnBWSFd4WQ?oc=5
+<b>1. [지자체·교육] 경기청년 역량강화 기회지원 (어학·자격증 비용 지원)</b> <a href="https://apply.jobaba.net">[👉공고보기]</a>
+• 🎯 <b>대상</b>: 수원시 등 경기도 거주 19~39세 미취업 청년 (소득 제한 없음)
+• 💰 <b>혜택</b>: 토익·오픽 등 어학시험, 국가기술/전문자격증 응시료 및 학원 수강료 연 최대 30만 원 현금(실비) 지원
+• 🗓 <b>기간</b>: 2026.05.02 ~ 2026.11.30 (응시료는 11월 말까지 신청) (D-34)
 
-• [교육/바우처] 국비지원 목공 학원 신청 순서…카드 발급부터 수강까지 무엇을 확인하나 (상시)
-  - 기관: 한국사회복지저널 (전국)
-  - 내용: 최근 7일 내 발표된 신규 신청/모집 공고 소식
-  - 기간: 공고 발표일: 2026-10-24 (상세 일정 링크 확인)
-  - 링크: https://news.google.com/rss/articles/CBMia0FVX3lxTE9ocW5IRUs4dTBORmRTZWRJT01TLVNnSzZLUXQyUjFsTWtURmdUMHlVa2ZURXB0MUNkUHhmb3dzZ0hTeVJFRDhDWDlYdEV2ZEQyZ2RaclFCY3hUQ3M3c3dhRjVDU3FDWVNOVzVZ?oc=5
+<b>2. [교육·바우처] 문화누리카드 (통합문화이용권)</b> <a href="https://www.mnuri.kr">[👉공고보기]</a>
+• 🎯 <b>대상</b>: 기초생활수급자 및 차상위계층 (6세 이상 연령 제한 없음)
+• 💰 <b>혜택</b>: 도서·영화·공연·음반·국내여행·체육시설 이용료 연 13만 원 바우처 카드 지급
+• 🗓 <b>기간</b>: 2026.02.01 ~ 2026.11.30 (예산 소진 시 조기 마감) (D-34)
 
-• [교육/바우처] 멋쟁이사자처럼, ‘백엔드 JAVA·SPRING 부트캠프 29기’ 교육생 모집 (상시)
-  - 기관: 데브타임즈 (전국)
-  - 내용: 최근 7일 내 발표된 신규 신청/모집 공고 소식
-  - 기간: 공고 발표일: 2026-10-21 (상세 일정 링크 확인)
-  - 링크: https://news.google.com/rss/articles/CBMiT0FVX3lxTE1QV1h5dmFVd0U4c2d4Yng5b1JmOWFhSEtUTzNUVmhTalUtbW1ZTEdaR3BFQUtLa0lGSTBCV1pfWTBpZDg0TGFfQ0RDS2Yybkk?oc=5
+<b>3. [청년·적금] 청년도약계좌</b> <a href="https://ylaccount.kinfa.or.kr">[👉공고보기]</a>
+• 🎯 <b>대상</b>: 만 19~34세 근로·사업소득 청년 (개인소득 연 7,500만 원 이하 &amp; 가구 중위소득 250% 이하)
+• 💰 <b>혜택</b>: 월 최대 70만 원 납입 시 정부기여금 매칭 + 이자 비과세로 5년 만기 최대 5,000만 원 목돈 마련
+• 🗓 <b>기간</b>: 매월 초~중순 가입 신청 기간 운영 (상시 안내) (상시)
 
-• [교육/바우처] 싸피 17기 모집, 월 100만 원이면 1년 1,200만 원 — 같은 1년 최저임금의 45%인데도 지원할 이유 (10월 26일~11월 9일 17시) (상시)
-  - 기관: 티스토리 (전국)
-  - 내용: 최근 7일 내 발표된 신규 신청/모집 공고 소식
-  - 기간: 공고 발표일: 2026-10-21 (상세 일정 링크 확인)
-  - 링크: https://news.google.com/rss/articles/CBMiUkFVX3lxTE5CQTYwY3Ita2F1UUVEenFTdUFya2t5b3VnaEs3OUN0WEFGNllsdGxkWHlhMjlqS2s5dEhIMVBZa2lJSDRjSXpTWV9kNm5mcmhkUWc?oc=5
+<b>4. [청년·금융] 경기청년 기회사다리금융 통장</b> <a href="https://apply.jobaba.net">[👉공고보기]</a>
+• 🎯 <b>대상</b>: 경기도 거주 25~39세 청년 (연소득·자산 제한 없음, 1년 이상 경기도 거주)
+• 💰 <b>혜택</b>: 최대 500만 원 저금리 마이너스 대출 + 최대 500만 원 우대금리 저축을 하나의 계좌로 동시 지원
+• 🗓 <b>기간</b>: 상시/기수별 모집 (잡아바 어플라이 신청) (상시)
 
-📌 3. 현재 신청 가능한 혜택 (6건)
-⭐ [지자체지원] 경기청년 역량강화 기회지원 (어학·자격시험 응시료/수강료 최대 30만 원 지원) (~2026-11-30 (D-34)) | https://apply.jobaba.net
-⭐ [교육/바우처] 문화누리카드 (통합문화이용권) (~2026-11-30 (D-34)) | https://www.mnuri.kr
-⭐ [청년/금융] 청년도약계좌 (매월 가입기간 운영) (매월 초~중순 가입 신청 기간 운영 (상시 안내)) | https://ylaccount.kinfa.or.kr
-⭐ [교육/바우처] 국민내일배움카드 (상시 신청 가능) | https://www.work24.go.kr
-• [청년/금융] 경기청년 기회사다리금융 (저금리 대출 + 우대금리 저축 결합 통장) (상시/기수별 모집 (잡아바 어플라이 확인)) | https://apply.jobaba.net
-• [주거/생활] The 경기패스 (K-패스 경기도민 추가 혜택 — 횟수 무제한 30% 환급) (상시 신청 가능) | https://korea-pass.kr
+<b>5. [교육·바우처] 국민내일배움카드</b> <a href="https://www.work24.go.kr">[👉공고보기]</a>
+• 🎯 <b>대상</b>: 지원 대상 제한 없음 (구직자·재직자·자영업자·대학생 등 전 국민 누구나, 일부 공무원 제외)
+• 💰 <b>혜택</b>: 직무·외국어·IT·자격증·공예 등 학원비 및 온라인 강의료 기본 300만 원 ~ 최대 500만 원 국비 지원
+• 🗓 <b>기간</b>: 상시 신청 가능 (상시)
 
-🗓️ 4. 이번 달·다음 달 오픈 예정 정기 혜택 (2건)
-⭐ [주거/생활] 수원시 무주택 청년·신혼부부 전월세보증금 대출이자 지원 (매년 상·하반기(3~4월, 9~10월) 정기 모집) | https://www.suwon.go.kr
-⭐ [민간/장학] 국가장학금 1·2유형 및 다자녀 장학금 (매년 5~6월, 8~9월, 11~12월, 2~3월 신청 기간 운영) | https://www.kosaf.go.kr
+<b>6. [교육·바우처] K-디지털 기초역량훈련 (코딩·AI·데이터 인강 바우처)</b> <a href="https://www.work24.go.kr">[👉공고보기]</a>
+• 🎯 <b>대상</b>: 국민내일배움카드 발급자 누구나 (전공·연령·소득 무관)
+• 💰 <b>혜택</b>: 내일배움카드 한도 외 별도로 패스트캠퍼스·인프런·코드잇 등 IT/AI/엑셀/데이터 강의료 50만 원 추가 지원 (자부담 10% 수료 시 환급)
+• 🗓 <b>기간</b>: 상시 신청 가능 (상시)
+
+<b>7. [지자체·취업] 경기도 청년면접수당</b> <a href="https://thankyou.jobaba.net">[👉공고보기]</a>
+• 🎯 <b>대상</b>: 경기도 거주 18~39세 청년 중 올해 취업 면접에 참여한 자 (합격 여부·단시간 일자리 무관)
+• 💰 <b>혜택</b>: 면접 1회당 5만 원, 연 최대 10회(총 50만 원) 수원페이 등 경기도 지역화폐 지급
+• 🗓 <b>기간</b>: 하반기 모집 기간 운영 (~11월 중 마감, 잡아바 확인) (D-29)
+
+<b>8. [청년·주거금융] 청년주택드림 청약통장</b> <a href="https://nhuf.molit.go.kr">[👉공고보기]</a>
+• 🎯 <b>대상</b>: 만 19~34세 무주택 청년 (연소득 5,000만 원 이하)
+• 💰 <b>혜택</b>: 최대 연 4.5% 금리 + 이자소득 비과세 + 소득공제 40% + 청약 당첨 시 최저 2.2% 저금리 대출 연계
+• 🗓 <b>기간</b>: 상시 가입 가능 (전국 시중은행) (상시)
+
+<b>9. [주거·생활비] The 경기패스 (대중교통비 환급)</b> <a href="https://korea-pass.kr">[👉공고보기]</a>
+• 🎯 <b>대상</b>: 경기도 거주 만 19세 이상 도민 누구나 (청년 기준 만 19~39세까지 확대 적용!)
+• 💰 <b>혜택</b>: 버스·지하철·GTX 월 15회 이상 이용 시 이용 횟수 무제한 30% 현금/마일리지 환급 (일반 성인은 20%)
+• 🗓 <b>기간</b>: 상시 신청 가능 (상시)
+
+🗓️ <b>4. 곧 오픈 예정인 정기 혜택 (2건)</b>
+
+<b>1. [주거·생활비] 수원시 무주택 청년·신혼부부 전월세보증금 대출이자 지원</b> <a href="https://www.suwon.go.kr">[👉공고보기]</a>
+• 🎯 <b>대상</b>: 수원시 거주 무주택 청년(18~39세, 보증금 1.5억 이하 &amp; 기준중위소득 180% 이하)
+• 💰 <b>혜택</b>: 전월세보증금 대출잔액의 1%~2% 이자 현금 지원 (청년 연 최대 100만 원, 신혼부부 최대 200만 원)
+• 🗓 <b>기간</b>: 매년 상반기(3~4월) · 하반기(9~10월) 정기 모집
+
+<b>2. [장학금·교육] 국가장학금 1·2유형 및 다자녀 장학금</b> <a href="https://www.kosaf.go.kr">[👉공고보기]</a>
+• 🎯 <b>대상</b>: 국내 대학 재학생·신입생·편입생·복학생 (학자금 지원 1~8구간 이하)
+• 💰 <b>혜택</b>: 소득구간별 등록금 연 350만 원 ~ 전액 국비 장학금 지원
+• 🗓 <b>기간</b>: 1학기 신청(11~12월, 2~3월) / 2학기 신청(5~6월, 8~9월)
+
+📰 <b>[참고] 최근 발표된 관련 정책 뉴스</b>
+• 국비지원 목공 학원 신청 순서…카드 발급부터 수강까지 무엇을 확인하나 <a href="https://news.google.com/rss/articles/CBMia0FVX3lxTE9ocW5IRUs4dTBORmRTZWRJT01TLVNnSzZLUXQyUjFsTWtURmdUMHlVa2ZURXB0MUNkUHhmb3dzZ0hTeVJFRDhDWDlYdEV2ZEQyZ2RaclFCY3hUQ3M3c3dhRjVDU3FDWVNOVzVZ?oc=5">[기사↗]</a>
+• 멋쟁이사자처럼, ‘백엔드 JAVA·SPRING 부트캠프 29기’ 교육생 모집 <a href="https://news.google.com/rss/articles/CBMiT0FVX3lxTE1QV1h5dmFVd0U4c2d4Yng5b1JmOWFhSEtUTzNUVmhTalUtbW1ZTEdaR3BFQUtLa0lGSTBCV1pfWTBpZDg0TGFfQ0RDS2Yybkk?oc=5">[기사↗]</a>
+• 싸피 17기 모집, 월 100만 원이면 1년 1,200만 원 — 같은 1년 최저임금의 45%인데도 지원할 이유 (10월 26일~11월 9일 17시) <a href="https://news.google.com/rss/articles/CBMiUkFVX3lxTE5CQTYwY3Ita2F1UUVEenFTdUFya2t5b3VnaEs3OUN0WEFGNllsdGxkWHlhMjlqS2s5dEhIMVBZa2lJSDRjSXpTWV9kNm5mcmhkUWc?oc=5">[기사↗]</a>

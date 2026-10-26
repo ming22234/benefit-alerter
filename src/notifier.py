@@ -1,4 +1,5 @@
 from datetime import date
+import html
 import os
 from pathlib import Path
 from typing import Any, Dict, List, Optional
@@ -6,28 +7,30 @@ import requests
 from src.config_loader import calculate_age
 from src.models import BenefitItem, ClassifiedBenefits
 
-TELEGRAM_MAX_LEN = 4000
+TELEGRAM_MAX_LEN = 3900
 
 
-def _format_item_detailed(item: BenefitItem) -> str:
-    star = "⭐ " if item.is_priority else "• "
-    d_str = f" (D-{item.d_day})" if item.d_day is not None else (" (상시)" if item.is_always_open else "")
+def _esc(text: str) -> str:
+    return html.escape(str(text or ""), quote=True)
+
+
+def _format_card_style_b(idx: int, item: BenefitItem) -> str:
+    """시안 B: 항목 태그 카드형 (🎯대상 / 💰혜택 / 🗓기간 줄바꿈 정리 + 짧은 클릭형 링크)"""
+    link_btn = f' <a href="{_esc(item.url)}">[👉공고보기]</a>' if item.url else ""
+    d_badge = f" (D-{item.d_day})" if item.d_day is not None else (" (상시)" if item.is_always_open else "")
+
     lines = [
-        f"{star}[{item.category}] {item.title}{d_str}",
-        f"  - 기관: {item.organization} ({item.region})",
-        f"  - 내용: {item.summary}",
-        f"  - 기간: {item.apply_period_text}",
+        f"<b>{idx}. [{_esc(item.category)}] {_esc(item.title)}</b>{link_btn}",
+        f"• 🎯 <b>대상</b>: {_esc(item.target_summary)}",
+        f"• 💰 <b>혜택</b>: {_esc(item.summary)}",
+        f"• 🗓 <b>기간</b>: {_esc(item.apply_period_text)}{_esc(d_badge)}",
     ]
-    if item.url:
-        lines.append(f"  - 링크: {item.url}")
     return "\n".join(lines)
 
 
-def _format_item_compact(item: BenefitItem) -> str:
-    star = "⭐" if item.is_priority else "•"
-    d_str = f"~{item.end_date} (D-{item.d_day})" if item.end_date and item.d_day is not None else item.apply_period_text
-    link_part = f" | {item.url}" if item.url else ""
-    return f"{star} [{item.category}] {item.title} ({d_str}){link_part}"
+def _format_news_line(item: BenefitItem) -> str:
+    link_btn = f' <a href="{_esc(item.url)}">[기사↗]</a>' if item.url else ""
+    return f"• {_esc(item.title)}{link_btn}"
 
 
 def format_daily_briefing(
@@ -40,45 +43,47 @@ def format_daily_briefing(
     notif = config.get("notification", {})
     max_other = int(notif.get("max_other_items_in_message", 20))
 
-    age = calculate_age(profile.get("birth_year", 1995), ref_today)
+    age = calculate_age(profile.get("birth_year", 1994), ref_today)
     sido = profile.get("region_sido", "").strip()
     sigungu = profile.get("region_sigungu", "").strip()
     region_label = f"{sido} {sigungu}".strip() or "전국"
 
     header = [
-        f"📢 [{ref_today.strftime('%Y-%m-%d')} 오늘의 맞춤 혜택 브리핑]",
-        f"(필터 기준: 만 {age}세 / {region_label} + 전국 공통)",
-        "─" * 28,
+        f"📢 <b>[{ref_today.strftime('%Y-%m-%d')} 내 맞춤 혜택 브리핑]</b>",
+        f"👤 기준: <b>만 {age}세 · {_esc(region_label)}</b> (+전국 공통)",
+        "────────────────────",
     ]
     sections: List[str] = ["\n".join(header)]
 
     if classified.newly_opened:
-        sec = [f"🔥 1. 새로 발견/오픈한 혜택 ({len(classified.newly_opened)}건)"]
-        for item in classified.newly_opened:
-            sec.append(_format_item_detailed(item))
+        sec = [f"🔥 <b>1. 오늘 새로 추가된 혜택 ({len(classified.newly_opened)}건)</b>"]
+        for idx, item in enumerate(classified.newly_opened, 1):
+            sec.append(_format_card_style_b(idx, item))
         sections.append("\n\n".join(sec))
-    else:
-        sections.append("🔥 1. 새로 발견/오픈한 혜택 (0건)\n• 오늘 새로 추가된 공고는 없습니다.")
 
     if classified.closing_soon:
-        sec = [f"⏰ 2. 마감 임박 혜택 ({len(classified.closing_soon)}건)"]
-        for item in classified.closing_soon:
-            sec.append(_format_item_detailed(item))
+        sec = [f"⏰ <b>2. 마감 임박! 3일 내 종료 ({len(classified.closing_soon)}건)</b>"]
+        for idx, item in enumerate(classified.closing_soon, 1):
+            sec.append(_format_card_style_b(idx, item))
         sections.append("\n\n".join(sec))
 
     if classified.currently_open:
         shown = classified.currently_open[:max_other]
-        sec = [f"📌 3. 현재 신청 가능한 혜택 ({len(classified.currently_open)}건)"]
-        for item in shown:
-            sec.append(_format_item_compact(item))
-        if len(classified.currently_open) > max_other:
-            sec.append(f"  ...외 {len(classified.currently_open) - max_other}건")
-        sections.append("\n".join(sec))
+        sec = [f"📌 <b>3. 지금 바로 신청 가능한 혜택 ({len(classified.currently_open)}건)</b>"]
+        for idx, item in enumerate(shown, 1):
+            sec.append(_format_card_style_b(idx, item))
+        sections.append("\n\n".join(sec))
 
     if classified.upcoming_monthly:
-        sec = [f"🗓️ 4. 이번 달·다음 달 오픈 예정 정기 혜택 ({len(classified.upcoming_monthly)}건)"]
-        for item in classified.upcoming_monthly:
-            sec.append(_format_item_compact(item))
+        sec = [f"🗓️ <b>4. 곧 오픈 예정인 정기 혜택 ({len(classified.upcoming_monthly)}건)</b>"]
+        for idx, item in enumerate(classified.upcoming_monthly, 1):
+            sec.append(_format_card_style_b(idx, item))
+        sections.append("\n\n".join(sec))
+
+    if classified.reference_news:
+        sec = ["📰 <b>[참고] 최근 발표된 관련 정책 뉴스</b>"]
+        for item in classified.reference_news:
+            sec.append(_format_news_line(item))
         sections.append("\n".join(sec))
 
     return "\n\n".join(sections)
@@ -89,30 +94,43 @@ def split_message_chunks(text: str, max_length: int = TELEGRAM_MAX_LEN) -> List[
         return [text]
 
     chunks: List[str] = []
-    current_lines: List[str] = []
+    current_blocks: List[str] = []
     current_len = 0
 
-    for line in text.split("\n"):
-        if len(line) > max_length:
-            if current_lines:
-                chunks.append("\n".join(current_lines))
-                current_lines = []
+    # 카드 단위(\n\n)로 끊어서 HTML 태그가 중간에 잘리지 않도록 안전하게 분할
+    for block in text.split("\n\n"):
+        if len(block) > max_length:
+            if current_blocks:
+                chunks.append("\n\n".join(current_blocks))
+                current_blocks = []
                 current_len = 0
-            for i in range(0, len(line), max_length):
-                chunks.append(line[i : i + max_length])
+            lines = block.split("\n")
+            temp_lines: List[str] = []
+            temp_len = 0
+            for ln in lines:
+                add_l = len(ln) + (1 if temp_lines else 0)
+                if temp_len + add_l > max_length and temp_lines:
+                    chunks.append("\n".join(temp_lines))
+                    temp_lines = [ln]
+                    temp_len = len(ln)
+                else:
+                    temp_lines.append(ln)
+                    temp_len += add_l
+            if temp_lines:
+                chunks.append("\n".join(temp_lines))
             continue
 
-        added_len = len(line) + (1 if current_lines else 0)
+        added_len = len(block) + (2 if current_blocks else 0)
         if current_len + added_len > max_length:
-            chunks.append("\n".join(current_lines))
-            current_lines = [line]
-            current_len = len(line)
+            chunks.append("\n\n".join(current_blocks))
+            current_blocks = [block]
+            current_len = len(block)
         else:
-            current_lines.append(line)
+            current_blocks.append(block)
             current_len += added_len
 
-    if current_lines:
-        chunks.append("\n".join(current_lines))
+    if current_blocks:
+        chunks.append("\n\n".join(current_blocks))
     return chunks
 
 
@@ -148,12 +166,13 @@ def send_telegram_message(text: str, preview_path: Optional[Path] = None) -> boo
     chunks = split_message_chunks(text)
 
     for idx, chunk in enumerate(chunks, 1):
-        prefix = f"[{idx}/{len(chunks)}]\n" if len(chunks) > 1 else ""
+        prefix = f"<b>[{idx}/{len(chunks)}]</b>\n" if len(chunks) > 1 else ""
         resp = requests.post(
             url,
             json={
                 "chat_id": chat_id,
                 "text": prefix + chunk,
+                "parse_mode": "HTML",
                 "disable_web_page_preview": True,
             },
             timeout=15,

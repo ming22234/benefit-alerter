@@ -1,30 +1,16 @@
 {
   "seen_ids": [
     "news_0b3977c444",
-    "news_0c9cb180aa",
-    "news_1903933",
-    "news_211435",
-    "news_2340581",
-    "news_3295045",
-    "news_4090612",
-    "news_4301957",
-    "news_4364383",
     "news_4845288234",
-    "news_522826",
-    "news_5538606",
-    "news_5940123",
-    "news_6585755",
-    "news_854858",
-    "news_8994887",
     "news_90a61c03ee",
-    "news_9122215",
-    "news_9615660",
-    "news_9689639",
     "seed_culture_nuri",
     "seed_gyeonggi_exam_fee",
+    "seed_gyeonggi_interview_pay",
     "seed_gyeonggi_ladder_finance",
     "seed_hrd_card",
+    "seed_kdigital_credit",
     "seed_the_gyeonggi_pass",
+    "seed_youth_housing_dream",
     "seed_youth_leap_account"
   ]
 }

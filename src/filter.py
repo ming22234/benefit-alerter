@@ -172,6 +172,12 @@ def filter_and_classify_benefits(
                 classified.upcoming_monthly.append(item)
             continue
 
+        # 일반 뉴스 기사는 메인 혜택 카드와 섞이지 않게 하단 참고 소식으로 분리 (신규 최대 3건)
+        if item.is_news:
+            if item.id not in seen_ids and len(classified.reference_news) < 3:
+                classified.reference_news.append(item)
+            continue
+
         # 이미 발송 이력(seen_ids)에 있는 공고는 절대 '신규'로 중복 발송하지 않음
         is_new = item.id not in seen_ids
         if is_new:

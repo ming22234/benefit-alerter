@@ -49,7 +49,8 @@ def collect_gov24_benefits(sido: str = "", max_pages: int = 2) -> List[BenefitIt
                 svc_id = str(row.get("서비스ID", "")).strip()
                 title = str(row.get("서비스명", "")).strip()
                 org = str(row.get("소관기관명", "")).strip()
-                summary = str(row.get("서비스목적요약", "")).strip()
+                target_text = str(row.get("지원대상", "") or "상세 공고 참조").strip()
+                benefit_text = str(row.get("지원내용", "") or row.get("서비스목적요약", "")).strip()
                 period_text = str(row.get("신청기한", "") or "상시").strip()
                 detail_url = str(row.get("상세조회URL", "") or "https://www.gov.kr").strip()
                 category = str(row.get("서비스분야", "") or "정부/지자체지원").strip()
@@ -65,7 +66,8 @@ def collect_gov24_benefits(sido: str = "", max_pages: int = 2) -> List[BenefitIt
                         title=title,
                         category=category,
                         organization=org,
-                        summary=summary[:120],
+                        target_summary=re.sub(r"\s+", " ", target_text)[:100],
+                        summary=re.sub(r"\s+", " ", benefit_text)[:120],
                         apply_period_text=period_text,
                         start_date=start_dt,
                         end_date=end_dt,
