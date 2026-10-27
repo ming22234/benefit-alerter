@@ -2,7 +2,7 @@
 👤 기준: <b>만 32세 · 경기 수원시 영통구</b> (+전국 공통)
 ────────────────────
 
-🔥 <b>1. 오늘 새로 추가된 혜택 (9건)</b>
+📌 <b>3. 지금 바로 신청 가능한 혜택 (9건)</b>
 
 <b>1. [교육·바우처] 문화누리카드 (통합문화이용권)</b> <a href="https://www.mnuri.kr/munhwa/cardIssueGuide.do">[📄상세안내]</a> <a href="https://www.mnuri.kr/card/cardMain/cardIssue_step00.do">[⚡신청창구]</a>
 • 🎯 <b>대상</b>: 기초생활수급자 및 차상위계층 (6세 이상 연령 제한 없음)
@@ -65,8 +65,3 @@
 • 🎯 <b>대상</b>: 국내 대학 재학생·신입생·편입생·복학생 (학자금 지원 1~8구간 이하)
 • 💰 <b>혜택</b>: 소득구간별 등록금 연 350만 원 ~ 전액 국비 장학금 지원
 • 🗓 <b>기간</b>: 1학기 신청(11~12월, 2~3월) / 2학기 신청(5~6월, 8~9월)
-
-📰 <b>[참고] 최근 발표된 관련 정책 뉴스</b>
-• 국비지원 목공 학원 신청 순서…카드 발급부터 수강까지 무엇을 확인하나 <a href="https://news.google.com/rss/articles/CBMia0FVX3lxTE9ocW5IRUs4dTBORmRTZWRJT01TLVNnSzZLUXQyUjFsTWtURmdUMHlVa2ZURXB0MUNkUHhmb3dzZ0hTeVJFRDhDWDlYdEV2ZEQyZ2RaclFCY3hUQ3M3c3dhRjVDU3FDWVNOVzVZ?oc=5">[기사↗]</a>
-• 싸피 17기 모집, 월 100만 원이면 1년 1,200만 원 — 같은 1년 최저임금의 45%인데도 지원할 이유 (10월 26일~11월 9일 17시) <a href="https://news.google.com/rss/articles/CBMiUkFVX3lxTE5CQTYwY3Ita2F1UUVEenFTdUFya2t5b3VnaEs3OUN0WEFGNllsdGxkWHlhMjlqS2s5dEhIMVBZa2lJSDRjSXpTWV9kNm5mcmhkUWc?oc=5">[기사↗]</a>
-• 청년미래적금 2차 신청자 68만8000명…11월 16일부터 계좌 개설 <a href="https://news.google.com/rss/articles/CBMicEFVX3lxTE9JdEpjbGtqM0w4eVpSZ05iOHNHVldFbUtROGNLQThUc1RScmdMWFJvS3lONkkwWjFCanh0QkpZcWRaWlA1RVF4MmRHT2JzbWtNRkoyMFJpVHRVcGdYdXBSUW5uckVvbE9ZNmRGRVRQSTA?oc=5">[기사↗]</a>
