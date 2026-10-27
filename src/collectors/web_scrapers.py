@@ -41,6 +41,60 @@ def detect_region_from_title(title: str, default_region: str = "전국") -> str:
     return default_region
 
 
+def scrape_lllcard_live_periods() -> List[BenefitItem]:
+    """평생교육이용권(lllcard.kr) 인트로 페이지에서 현재 진행 중인 지자체별 실시간 접수 일정 및 신청 직링 수집"""
+    intro_url = "https://www.lllcard.kr/html/intro.html"
+    region_map = {
+        "seoul": "서울", "busan": "부산", "daegu": "대구", "incheon": "인천",
+        "gwangju": "광주", "daejeon": "대전", "ulsan": "울산", "sejong": "세종",
+        "gyeonggi": "경기", "gangwon": "강원", "chungbuk": "충북", "chungnam": "충남",
+        "jeonbuk": "전북", "jeonnam": "전남", "gyeongbuk": "경북", "gyeongnam": "경남", "jeju": "제주",
+    }
+    items: List[BenefitItem] = []
+    try:
+        resp = requests.get(intro_url, headers=HEADERS, timeout=10)
+        resp.raise_for_status()
+        resp.encoding = "utf-8"
+        soup = BeautifulSoup(resp.text, "html.parser")
+        for card in soup.select("ul.local-grid a.apply-card"):
+            href = card.get("href", "").strip()
+            start_attr = (card.get("data-start") or "")[:10]
+            end_attr = (card.get("data-end") or "")[:10]
+            badge_el = card.select_one(".user-badge")
+            period_el = card.select_one(".period-date")
+            badge_txt = badge_el.get_text(strip=True) if badge_el else "일반/우수"
+            period_txt = period_el.get_text(" ", strip=True) if period_el else f"{start_attr} ~ {end_attr}"
+
+            reg_code = ""
+            m = re.search(r"/reg/([a-z]+)/", href)
+            if m:
+                reg_code = m.group(1)
+            kor_region = region_map.get(reg_code, "전국")
+            full_apply_url = f"https://www.lllcard.kr{href}" if href.startswith("/") else intro_url
+
+            items.append(
+                BenefitItem(
+                    id=f"lllcard_{reg_code}_{start_attr}_{badge_txt}",
+                    title=f"[{kor_region}] 2026 평생교육이용권 신청 접수 ({badge_txt})",
+                    category="교육·바우처",
+                    organization=f"국가평생교육진흥원 · {kor_region}",
+                    target_summary=f"{kor_region} 거주 만 19세 이상 성인 ({badge_txt} 대상)",
+                    summary="평생교육 강좌 수강료 및 교재비 35만 원 포인트 지원",
+                    apply_period_text=period_txt,
+                    start_date=start_attr or None,
+                    end_date=end_attr or None,
+                    is_always_open=False,
+                    min_age=19,
+                    region=kor_region,
+                    url=intro_url,
+                    apply_url=full_apply_url,
+                )
+            )
+    except Exception as exc:
+        print(f"[WARN] 평생교육이용권 실시간 접수창구 수집 실패: {exc}")
+    return items
+
+
 def scrape_wevity_scholarships_and_support() -> List[BenefitItem]:
     """위비티(Wevity) 장학금/지원금/청년혜택/교육 공모 리스트 실시간 수집 (API 키 불필요)"""
     urls = [

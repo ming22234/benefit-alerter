@@ -18,6 +18,7 @@ class BenefitItem:
     max_age: Optional[int] = None
     region: str = "전국"
     url: str = ""
+    apply_url: str = ""
     expected_months: List[int] = field(default_factory=list)
     is_priority: bool = False
     is_news: bool = False

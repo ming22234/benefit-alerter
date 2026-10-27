@@ -4,6 +4,7 @@ from typing import Set
 from src.collectors.gov24_api import collect_gov24_benefits
 from src.collectors.seed_collector import collect_seed_benefits
 from src.collectors.web_scrapers import (
+    scrape_lllcard_live_periods,
     scrape_policy_news_rss,
     scrape_wevity_scholarships_and_support,
 )
@@ -42,11 +43,12 @@ def main() -> None:
     sigungu = config.get("profile", {}).get("region_sigungu", "")
 
     seed_items = collect_seed_benefits(SEED_PATH)
+    lllcard_items = scrape_lllcard_live_periods()
     gov24_items = collect_gov24_benefits(sido=sido)
     web_items = scrape_wevity_scholarships_and_support()
     news_items = scrape_policy_news_rss(sido=sido, sigungu=sigungu)
 
-    all_items = seed_items + gov24_items + web_items + news_items
+    all_items = lllcard_items + seed_items + gov24_items + web_items + news_items
     seen_ids = load_seen_ids(SEEN_PATH)
 
     classified = filter_and_classify_benefits(

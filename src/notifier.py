@@ -15,8 +15,14 @@ def _esc(text: str) -> str:
 
 
 def _format_card_style_b(idx: int, item: BenefitItem) -> str:
-    """시안 B: 항목 태그 카드형 (🎯대상 / 💰혜택 / 🗓기간 줄바꿈 정리 + 짧은 클릭형 링크)"""
-    link_btn = f' <a href="{_esc(item.url)}">[👉공고보기]</a>' if item.url else ""
+    """시안 B: 항목 태그 카드형 (🎯대상 / 💰혜택 / 🗓기간 줄바꿈 정리 + 상세/신청 딥링크 버튼)"""
+    btns = []
+    if item.url and item.apply_url and item.url != item.apply_url:
+        btns.append(f'<a href="{_esc(item.url)}">[📄상세안내]</a>')
+        btns.append(f'<a href="{_esc(item.apply_url)}">[⚡신청창구]</a>')
+    elif item.url:
+        btns.append(f'<a href="{_esc(item.url)}">[📄상세·신청페이지]</a>')
+    link_btn = (" " + " ".join(btns)) if btns else ""
     d_badge = f" (D-{item.d_day})" if item.d_day is not None else (" (상시)" if item.is_always_open else "")
 
     lines = [
