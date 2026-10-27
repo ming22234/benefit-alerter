@@ -9,8 +9,13 @@ from src.collectors.web_scrapers import (
     scrape_wevity_scholarships_and_support,
 )
 from src.config_loader import load_config
+from src.daily_blog_generator import build_blog_package_for_today
 from src.filter import filter_and_classify_benefits
-from src.notifier import format_daily_briefing, send_telegram_message
+from src.notifier import (
+    format_daily_briefing,
+    send_telegram_blog_package,
+    send_telegram_message,
+)
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 CONFIG_PATH = BASE_DIR / "config.yaml"
@@ -59,6 +64,10 @@ def main() -> None:
 
     briefing_text = format_daily_briefing(classified, config)
     sent = send_telegram_message(briefing_text, preview_path=PREVIEW_PATH)
+
+    # 매일 혜택 브리핑 발송 후, 오늘의 집중 해부 블로그 원고(.html 이미지 내장 + .md + 이미지 2장) 생성 및 발송
+    blog_pkg = build_blog_package_for_today()
+    blog_sent = send_telegram_blog_package(blog_pkg)
 
     for item in classified.newly_opened:
         seen_ids.add(item.id)

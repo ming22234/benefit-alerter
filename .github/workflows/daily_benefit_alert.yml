@@ -21,11 +21,13 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Install dependencies
+      - name: Install Korean fonts & dependencies
         run: |
+          sudo apt-get update
+          sudo apt-get install -y fonts-nanum
           pip install -r requirements.txt
 
-      - name: Run Benefit Collector & Notifier
+      - name: Run Benefit Collector, Blog Generator & Notifier
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
@@ -33,10 +35,10 @@ jobs:
         run: |
           PYTHONPATH=. python src/main.py
 
-      - name: Commit updated seen_history.json
+      - name: Commit updated history and generated blog post
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/seen_history.json data/latest_preview.md
-          git diff --staged --quiet || git commit -m "chore: update seen benefit history"
+          git add data/seen_history.json data/blog_history.json data/latest_preview.md blog_posts/
+          git diff --staged --quiet || git commit -m "chore: update daily benefit & blog history"
           git push

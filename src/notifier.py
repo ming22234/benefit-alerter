@@ -185,3 +185,64 @@ def send_telegram_message(text: str, preview_path: Optional[Path] = None) -> boo
         )
         resp.raise_for_status()
     return True
+
+
+def send_telegram_blog_package(blog_pkg: Dict[str, Any]) -> bool:
+    """오늘의 블로그 원고(.html 올인원 파일 + .md 텍스트 + 썸네일/인포그래픽 이미지 2장)를 텔레그램으로 전송"""
+    _load_dotenv_fallback()
+    bot_token = os.getenv("TELEGRAM_BOT_TOKEN", "").strip()
+    chat_id = os.getenv("TELEGRAM_CHAT_ID", "").strip()
+
+    if not bot_token or not chat_id:
+        print("[INFO] 텔레그램 설정이 없어 블로그 패키지는 로컬 파일로만 저장했습니다.")
+        return False
+
+    base_api = f"https://api.telegram.org/bot{bot_token}"
+    html_path: Path = blog_pkg["html_path"]
+    md_path: Path = blog_pkg["md_path"]
+    thumb_path: Path = blog_pkg["thumb_path"]
+    info_path: Path = blog_pkg["info_path"]
+    blog_cat: str = blog_pkg["blog_category"]
+    rec_title: str = blog_pkg["recommended_title"]
+
+    # 1. 썸네일 & 본문 인포그래픽 이미지 전송
+    for label, img_p in [("🎨 [1/2] 블로그 대표 썸네일 이미지", thumb_path), ("📊 [2/2] 본문 삽입용 핵심 요약 인포그래픽", info_path)]:
+        if img_p and img_p.exists():
+            with open(img_p, "rb") as f:
+                r = requests.post(
+                    f"{base_api}/sendPhoto",
+                    data={"chat_id": chat_id, "caption": label},
+                    files={"photo": (img_p.name, f, "image/png")},
+                    timeout=25,
+                )
+                r.raise_for_status()
+
+    # 2. 이미지 내장 올인원 HTML 파일 전송
+    caption_html = (
+        f"📝 [오늘의 혜택 블로그 올인원 원고]\n"
+        f"• 📂 카테고리: {blog_cat}\n"
+        f"• 💡 추천제목: {rec_title}\n\n"
+        f"👉 위 .html 파일을 열면 [이미지 2장 포함 + 본문 서식 1클릭 복사]가 바로 가능합니다!"
+    )
+    if html_path and html_path.exists():
+        with open(html_path, "rb") as f:
+            r = requests.post(
+                f"{base_api}/sendDocument",
+                data={"chat_id": chat_id, "caption": caption_html},
+                files={"document": (html_path.name, f, "text/html")},
+                timeout=25,
+            )
+            r.raise_for_status()
+
+    # 3. 순수 텍스트(.md) 원고 파일도 함께 전송
+    if md_path and md_path.exists():
+        with open(md_path, "rb") as f:
+            r = requests.post(
+                f"{base_api}/sendDocument",
+                data={"chat_id": chat_id, "caption": f"📄 [순수 텍스트 복붙용 원고] ({blog_cat})"},
+                files={"document": (md_path.name, f, "text/plain")},
+                timeout=25,
+            )
+            r.raise_for_status()
+
+    return True
