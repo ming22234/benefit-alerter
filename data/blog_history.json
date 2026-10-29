@@ -11,6 +11,12 @@
       "id": "seed_culture_nuri",
       "title": "문화누리카드 (통합문화이용권)",
       "file": "blog_posts/2026-10-28_문화누리카드.html"
+    },
+    {
+      "date": "2026-10-29",
+      "id": "seed_gyeonggi_interview_pay",
+      "title": "경기도 청년면접수당",
+      "file": "blog_posts/2026-10-29_경기도-청년면접수당.html"
     }
   ]
 }

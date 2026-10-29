@@ -2,6 +2,7 @@ from datetime import date
 import html
 import os
 from pathlib import Path
+import time
 from typing import Any, Dict, List, Optional
 import requests
 from src.config_loader import calculate_age
@@ -155,6 +156,56 @@ def _load_dotenv_fallback() -> None:
             os.environ[k] = v
 
 
+def _post_telegram_with_retry(
+    url: str,
+    *,
+    json_payload: Optional[Dict[str, Any]] = None,
+    data: Optional[Dict[str, Any]] = None,
+    file_field: Optional[str] = None,
+    file_path: Optional[Path] = None,
+    content_type: str = "application/octet-stream",
+    max_retries: int = 4,
+    pacing_sec: float = 1.0,
+) -> requests.Response:
+    """연속 호출 시 발생하는 ConnectionResetError(104) 등을 방지하기 위해
+    간격(pacing)을 두고, 실패 시 바이트 버퍼를 새로 공급하며 지수 백오프로 재시도합니다.
+    """
+    if pacing_sec > 0:
+        time.sleep(pacing_sec)
+
+    file_bytes: Optional[bytes] = None
+    file_name: str = ""
+    if file_path is not None:
+        file_bytes = file_path.read_bytes()
+        file_name = file_path.name
+
+    last_err: Optional[Exception] = None
+    for attempt in range(1, max_retries + 1):
+        try:
+            files = None
+            if file_field and file_bytes is not None:
+                files = {file_field: (file_name, file_bytes, content_type)}
+
+            resp = requests.post(
+                url,
+                json=json_payload,
+                data=data,
+                files=files,
+                timeout=35,
+            )
+            resp.raise_for_status()
+            return resp
+        except requests.exceptions.RequestException as exc:
+            last_err = exc
+            wait_sec = 2.0 * attempt
+            print(f"[WARN] Telegram API 요청 실패 ({attempt}/{max_retries}): {exc} -> {wait_sec:.1f}초 후 재시도")
+            if attempt < max_retries:
+                time.sleep(wait_sec)
+
+    assert last_err is not None
+    raise last_err
+
+
 def send_telegram_message(text: str, preview_path: Optional[Path] = None) -> bool:
     if preview_path:
         preview_path.parent.mkdir(parents=True, exist_ok=True)
@@ -173,21 +224,20 @@ def send_telegram_message(text: str, preview_path: Optional[Path] = None) -> boo
 
     for idx, chunk in enumerate(chunks, 1):
         prefix = f"<b>[{idx}/{len(chunks)}]</b>\n" if len(chunks) > 1 else ""
-        resp = requests.post(
+        _post_telegram_with_retry(
             url,
-            json={
+            json_payload={
                 "chat_id": chat_id,
                 "text": prefix + chunk,
                 "parse_mode": "HTML",
                 "disable_web_page_preview": True,
             },
-            timeout=15,
+            pacing_sec=0.5 if idx > 1 else 0.0,
         )
-        resp.raise_for_status()
     return True
 
 
-def send_telegram_blog_package(blog_pkg: Dict[str, Any]) -> bool:
+def send_telegram_blog_package(blog_pkg: Dict[str, Any], skip_images: bool = False) -> bool:
     """오늘의 블로그 원고(.html 올인원 파일 + .md 텍스트 + 썸네일/인포그래픽 이미지 2장)를 텔레그램으로 전송"""
     _load_dotenv_fallback()
     bot_token = os.getenv("TELEGRAM_BOT_TOKEN", "").strip()
@@ -205,17 +255,27 @@ def send_telegram_blog_package(blog_pkg: Dict[str, Any]) -> bool:
     blog_cat: str = blog_pkg["blog_category"]
     rec_title: str = blog_pkg["recommended_title"]
 
+    all_ok = True
+
     # 1. 썸네일 & 본문 인포그래픽 이미지 전송
-    for label, img_p in [("🎨 [1/2] 블로그 대표 썸네일 이미지", thumb_path), ("📊 [2/2] 본문 삽입용 핵심 요약 인포그래픽", info_path)]:
-        if img_p and img_p.exists():
-            with open(img_p, "rb") as f:
-                r = requests.post(
-                    f"{base_api}/sendPhoto",
-                    data={"chat_id": chat_id, "caption": label},
-                    files={"photo": (img_p.name, f, "image/png")},
-                    timeout=25,
-                )
-                r.raise_for_status()
+    if not skip_images:
+        for label, img_p in [
+            ("🎨 [1/2] 블로그 대표 썸네일 이미지", thumb_path),
+            ("📊 [2/2] 본문 삽입용 핵심 요약 인포그래픽", info_path),
+        ]:
+            if img_p and img_p.exists():
+                try:
+                    _post_telegram_with_retry(
+                        f"{base_api}/sendPhoto",
+                        data={"chat_id": chat_id, "caption": label},
+                        file_field="photo",
+                        file_path=img_p,
+                        content_type="image/png",
+                        pacing_sec=1.0,
+                    )
+                except Exception as exc:
+                    print(f"[ERROR] 이미지 전송 최종 실패 ({img_p.name}): {exc}")
+                    all_ok = False
 
     # 2. 이미지 내장 올인원 HTML 파일 전송
     caption_html = (
@@ -225,24 +285,32 @@ def send_telegram_blog_package(blog_pkg: Dict[str, Any]) -> bool:
         f"👉 위 .html 파일을 열면 [이미지 2장 포함 + 본문 서식 1클릭 복사]가 바로 가능합니다!"
     )
     if html_path and html_path.exists():
-        with open(html_path, "rb") as f:
-            r = requests.post(
+        try:
+            _post_telegram_with_retry(
                 f"{base_api}/sendDocument",
                 data={"chat_id": chat_id, "caption": caption_html},
-                files={"document": (html_path.name, f, "text/html")},
-                timeout=25,
+                file_field="document",
+                file_path=html_path,
+                content_type="text/html",
+                pacing_sec=1.2,
             )
-            r.raise_for_status()
+        except Exception as exc:
+            print(f"[ERROR] HTML 원고 전송 최종 실패 ({html_path.name}): {exc}")
+            all_ok = False
 
     # 3. 순수 텍스트(.md) 원고 파일도 함께 전송
     if md_path and md_path.exists():
-        with open(md_path, "rb") as f:
-            r = requests.post(
+        try:
+            _post_telegram_with_retry(
                 f"{base_api}/sendDocument",
                 data={"chat_id": chat_id, "caption": f"📄 [순수 텍스트 복붙용 원고] ({blog_cat})"},
-                files={"document": (md_path.name, f, "text/plain")},
-                timeout=25,
+                file_field="document",
+                file_path=md_path,
+                content_type="text/plain",
+                pacing_sec=1.0,
             )
-            r.raise_for_status()
+        except Exception as exc:
+            print(f"[ERROR] MD 원고 전송 최종 실패 ({md_path.name}): {exc}")
+            all_ok = False
 
-    return True
+    return all_ok
