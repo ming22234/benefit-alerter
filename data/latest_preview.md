@@ -1,4 +1,4 @@
-📢 <b>[2026-10-30 내 맞춤 혜택 브리핑]</b>
+📢 <b>[2026-10-31 내 맞춤 혜택 브리핑]</b>
 👤 기준: <b>만 32세 · 경기 수원시 영통구</b> (+전국 공통)
 ────────────────────
 
@@ -7,12 +7,12 @@
 <b>1. [교육·바우처] 문화누리카드 (통합문화이용권)</b> <a href="https://www.mnuri.kr/munhwa/cardIssueGuide.do">[📄상세안내]</a> <a href="https://www.mnuri.kr/card/cardMain/cardIssue_step00.do">[⚡신청창구]</a>
 • 🎯 <b>대상</b>: 기초생활수급자 및 차상위계층 (6세 이상 연령 제한 없음)
 • 💰 <b>혜택</b>: 도서·영화·공연·음반·국내여행·체육시설 이용료 연 13만 원 바우처 카드 지급
-• 🗓 <b>기간</b>: 2026.02.01 ~ 2026.11.30 (예산 소진 시 조기 마감) (D-31)
+• 🗓 <b>기간</b>: 2026.02.01 ~ 2026.11.30 (예산 소진 시 조기 마감) (D-30)
 
 <b>2. [지자체·교육] 경기청년 역량강화 기회지원 (어학·자격증 비용 지원)</b> <a href="https://www.suwon.go.kr/web/board/BD_board.view.do?bbsCd=1042&amp;seq=20260805143956146">[📄상세안내]</a> <a href="https://apply.jobaba.net/bsns/bsnsListView.do?schBsnsName=%EC%97%AD%EB%9F%89%EA%B0%95%ED%99%94">[⚡신청창구]</a>
 • 🎯 <b>대상</b>: 수원시 등 경기도 거주 19~39세 미취업 청년 (소득 제한 없음)
 • 💰 <b>혜택</b>: 토익·오픽 등 어학시험, 한국사, 국가기술/전문/공인민간자격증 응시료 및 수강료 연 최대 30만 원 실비 지원
-• 🗓 <b>기간</b>: 2026.09.01 ~ 2026.12.04 (수원시 하반기 접수 진행중 / 예산 소진 시 마감) (D-35)
+• 🗓 <b>기간</b>: 2026.09.01 ~ 2026.12.04 (수원시 하반기 접수 진행중 / 예산 소진 시 마감) (D-34)
 
 <b>3. [청년·적금] 청년도약계좌</b> <a href="https://www.bokjiro.go.kr/ssis-tbu/link/WFletter2017.jsp?cmsUrl=/ssis-tbu/cms/pc/news/news/1305084_1114.html">[📄상세안내]</a> <a href="https://ylaccount.kinfa.or.kr">[⚡신청창구]</a>
 • 🎯 <b>대상</b>: 만 19~34세 근로·사업소득 청년 (개인소득 연 7,500만 원 이하 &amp; 가구 중위소득 250% 이하)
@@ -37,7 +37,7 @@
 <b>7. [지자체·취업] 경기도 청년면접수당</b> <a href="https://www.gg.go.kr/contents/contents.do?ciIdx=987029&amp;menuId=265937">[📄상세안내]</a> <a href="https://apply.jobaba.net/bsns/bsnsListView.do?schBsnsName=%EB%A9%B4%EC%A0%91%EC%88%98%EB%8B%B9">[⚡신청창구]</a>
 • 🎯 <b>대상</b>: 경기도 거주 18~39세 청년 중 올해 취업 면접에 참여한 자 (소득·재직·합격 여부 무관)
 • 💰 <b>혜택</b>: 면접 1회당 5만 원, 연 최대 10회(또는 차수별 한도) 수원페이 등 경기도 지역화폐 지급
-• 🗓 <b>기간</b>: 하반기 모집 기간 운영 (~11월 중 마감, 상세공고 확인) (D-26)
+• 🗓 <b>기간</b>: 하반기 모집 기간 운영 (~11월 중 마감, 상세공고 확인) (D-25)
 
 <b>8. [청년·주거금융] 청년주택드림 청약통장</b> <a href="https://nhuf.molit.go.kr/FP/FP05/FP0502/FP05020601.jsp">[📄상세·신청페이지]</a>
 • 🎯 <b>대상</b>: 만 19~34세 무주택 청년 (연소득 5,000만 원 이하)
@@ -67,6 +67,4 @@
 • 🗓 <b>기간</b>: 1학기 신청(11~12월, 2~3월) / 2학기 신청(5~6월, 8~9월)
 
 📰 <b>[참고] 최근 발표된 관련 정책 뉴스</b>
-• 청년월세지원 신청 전 서류 3가지 챙겨야 <a href="https://news.google.com/rss/articles/CBMiaEFVX3lxTE1rLTRPRDY5ME8yMndmRXlaSHhkRHkyY256ZUlNQVBoT0VTdHhGQzRaZDRsOTVYWldYN1czT3UtNlFVQ1RweXRCcjRCZUk2RUlmcHczS3hDMG9tdWJuTzNsVVh2cVBJSmJX?oc=5">[기사↗]</a>
-• 청년미래적금 1·2차 신청자 281만명 넘어…11월 계좌 개설 전 확인할 사항은? <a href="https://news.google.com/rss/articles/CBMia0FVX3lxTFBSOTR4RzIwVkxWS0xDRkJDbWV3bnBPYVVjNVVNSmIzTmZjT2YtbXZjZFMzSDViWDRWbmtIRkdROEt5NzA0c21xd0JnNUpIVFRfSVJJUTNJdFZoSGxHMUYzNWc0VFFPalFNY3VN0gFvQVVfeXFMUGo4Rmh0VmV6XzRycEczQkc3V0pOaHNFeXdwZGdkdDh2VFVNZkFFZ2lWWjBDSlA5VTloMF82VFVJWjJicXNuRWRzdGFDcEVhbHFZQWh0cjZSeXhWSnZWU3BSUm1fNEdRRlk1dXdhM1VB?oc=5">[기사↗]</a>
-• 청년월세지원 최대 480만 원…‘신청 놓쳤다면?’ <a href="https://news.google.com/rss/articles/CBMia0FVX3lxTE1qdTM4SGpCMkJUZVpGR2thOWRoSHp6ZUNJUVdYcWFPRTExUDZzdGEzYWdBN3hjTkx5VXllaVU1S1M0VkRjMjRCLS1qeFk3QVJiWXh1bU1jMGFHNXVVYUpkeldPNDdUVmJYbmV30gFrQVVfeXFMTWp1MzhIakIyQlRlWkZHa2E5ZGhIenplQ0lRV1hxYU9FMTFQNnN0YTNhZ0E3eGNOTHlVeWVpVTVLUzRWRGMyNEItLWp4WTdBUmJZeHVtTWMwYUc1dVVhSmR6V080N1RWYlhuZXc?oc=5">[기사↗]</a>
+• 청년월세 최대 24개월 지원…2026년 신청은 마감 <a href="https://news.google.com/rss/articles/CBMiZkFVX3lxTE9SQXVhSjl4WEMwTkwzQUlxRG5jS3ZrQ2xBQ1AxTG9IVk9PQkVSSGdYWEd2aWg1cTZuZEc2SGk1dmNYcmJ2YzJlbUs4Y1dyRk1sdjgxNzZZaF8yV0piTWVIQTVteEdHQQ?oc=5">[기사↗]</a>
