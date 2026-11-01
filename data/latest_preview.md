@@ -1,4 +1,4 @@
-📢 <b>[2026-10-31 내 맞춤 혜택 브리핑]</b>
+📢 <b>[2026-11-01 내 맞춤 혜택 브리핑]</b>
 👤 기준: <b>만 32세 · 경기 수원시 영통구</b> (+전국 공통)
 ────────────────────
 
@@ -7,12 +7,12 @@
 <b>1. [교육·바우처] 문화누리카드 (통합문화이용권)</b> <a href="https://www.mnuri.kr/munhwa/cardIssueGuide.do">[📄상세안내]</a> <a href="https://www.mnuri.kr/card/cardMain/cardIssue_step00.do">[⚡신청창구]</a>
 • 🎯 <b>대상</b>: 기초생활수급자 및 차상위계층 (6세 이상 연령 제한 없음)
 • 💰 <b>혜택</b>: 도서·영화·공연·음반·국내여행·체육시설 이용료 연 13만 원 바우처 카드 지급
-• 🗓 <b>기간</b>: 2026.02.01 ~ 2026.11.30 (예산 소진 시 조기 마감) (D-30)
+• 🗓 <b>기간</b>: 2026.02.01 ~ 2026.11.30 (예산 소진 시 조기 마감) (D-29)
 
 <b>2. [지자체·교육] 경기청년 역량강화 기회지원 (어학·자격증 비용 지원)</b> <a href="https://www.suwon.go.kr/web/board/BD_board.view.do?bbsCd=1042&amp;seq=20260805143956146">[📄상세안내]</a> <a href="https://apply.jobaba.net/bsns/bsnsListView.do?schBsnsName=%EC%97%AD%EB%9F%89%EA%B0%95%ED%99%94">[⚡신청창구]</a>
 • 🎯 <b>대상</b>: 수원시 등 경기도 거주 19~39세 미취업 청년 (소득 제한 없음)
 • 💰 <b>혜택</b>: 토익·오픽 등 어학시험, 한국사, 국가기술/전문/공인민간자격증 응시료 및 수강료 연 최대 30만 원 실비 지원
-• 🗓 <b>기간</b>: 2026.09.01 ~ 2026.12.04 (수원시 하반기 접수 진행중 / 예산 소진 시 마감) (D-34)
+• 🗓 <b>기간</b>: 2026.09.01 ~ 2026.12.04 (수원시 하반기 접수 진행중 / 예산 소진 시 마감) (D-33)
 
 <b>3. [청년·적금] 청년도약계좌</b> <a href="https://www.bokjiro.go.kr/ssis-tbu/link/WFletter2017.jsp?cmsUrl=/ssis-tbu/cms/pc/news/news/1305084_1114.html">[📄상세안내]</a> <a href="https://ylaccount.kinfa.or.kr">[⚡신청창구]</a>
 • 🎯 <b>대상</b>: 만 19~34세 근로·사업소득 청년 (개인소득 연 7,500만 원 이하 &amp; 가구 중위소득 250% 이하)
@@ -37,7 +37,7 @@
 <b>7. [지자체·취업] 경기도 청년면접수당</b> <a href="https://www.gg.go.kr/contents/contents.do?ciIdx=987029&amp;menuId=265937">[📄상세안내]</a> <a href="https://apply.jobaba.net/bsns/bsnsListView.do?schBsnsName=%EB%A9%B4%EC%A0%91%EC%88%98%EB%8B%B9">[⚡신청창구]</a>
 • 🎯 <b>대상</b>: 경기도 거주 18~39세 청년 중 올해 취업 면접에 참여한 자 (소득·재직·합격 여부 무관)
 • 💰 <b>혜택</b>: 면접 1회당 5만 원, 연 최대 10회(또는 차수별 한도) 수원페이 등 경기도 지역화폐 지급
-• 🗓 <b>기간</b>: 하반기 모집 기간 운영 (~11월 중 마감, 상세공고 확인) (D-25)
+• 🗓 <b>기간</b>: 하반기 모집 기간 운영 (~11월 중 마감, 상세공고 확인) (D-24)
 
 <b>8. [청년·주거금융] 청년주택드림 청약통장</b> <a href="https://nhuf.molit.go.kr/FP/FP05/FP0502/FP05020601.jsp">[📄상세·신청페이지]</a>
 • 🎯 <b>대상</b>: 만 19~34세 무주택 청년 (연소득 5,000만 원 이하)
@@ -49,22 +49,12 @@
 • 💰 <b>혜택</b>: 버스·지하철·광역버스·GTX 월 15회 이상 이용 시 횟수 무제한 30% 환급 + 월 정액 초과분 100% 환급
 • 🗓 <b>기간</b>: 상시 신청 가능 (K-패스 카드 발급 후 앱/홈페이지 등록) (상시)
 
-🗓️ <b>4. 곧 오픈 예정인 정기 혜택 (3건)</b>
+🗓️ <b>4. 곧 오픈 예정인 정기 혜택 (1건)</b>
 
-<b>1. [교육·바우처] 평생교육이용권 (평생교육바우처)</b> <a href="https://www.lllcard.kr/html/intro.html">[📄상세안내]</a> <a href="https://www.lllcard.kr/main/main/mainView.do">[⚡신청창구]</a>
-• 🎯 <b>대상</b>: 만 19세 이상 성인 (기초·차상위 우선 지원 및 지자체별 일반/우수이용자 선발)
-• 💰 <b>혜택</b>: 평생교육 강좌 수강료 및 교재비 연 35만 원 (우수이용자 재충전 시 총 70만 원) 포인트 지원
-• 🗓 <b>기간</b>: 매년 1~2월 정기 신청 및 5~10월 지자체별 추가/우수이용자 접수
-
-<b>2. [주거·생활비] 수원시 청년·신혼 희망터치 전월세보증금 대출이자 지원</b> <a href="https://www.suwon.go.kr/sw-www/deptHome/dep_city/city09/city09_11.jsp">[📄상세안내]</a> <a href="https://www.suwon.go.kr/web/board/BD_board.view.do?bbsCd=1042&amp;seq=20260709141502448">[⚡신청창구]</a>
-• 🎯 <b>대상</b>: 수원시 거주 무주택 청년(18~39세) 및 신혼부부 중 금융권 전월세보증금 대출 이용자
-• 💰 <b>혜택</b>: 전월세보증금 대출잔액의 연 1% 이자 현금 지원 (청년 연 최대 50만 원, 신혼부부 최대 100만 원, 최대 3회)
-• 🗓 <b>기간</b>: 매년 하반기(7~10월경) 정기 모집 (수원시청·새빛톡톡 접수)
-
-<b>3. [장학금·교육] 국가장학금 1·2유형 및 다자녀 장학금</b> <a href="https://www.kosaf.go.kr/ko/scholar.do?pg=scholarship05_12_01_01">[📄상세·신청페이지]</a>
+<b>1. [장학금·교육] 국가장학금 1·2유형 및 다자녀 장학금</b> <a href="https://www.kosaf.go.kr/ko/scholar.do?pg=scholarship05_12_01_01">[📄상세·신청페이지]</a>
 • 🎯 <b>대상</b>: 국내 대학 재학생·신입생·편입생·복학생 (학자금 지원 1~8구간 이하)
 • 💰 <b>혜택</b>: 소득구간별 등록금 연 350만 원 ~ 전액 국비 장학금 지원
 • 🗓 <b>기간</b>: 1학기 신청(11~12월, 2~3월) / 2학기 신청(5~6월, 8~9월)
 
 📰 <b>[참고] 최근 발표된 관련 정책 뉴스</b>
-• 청년월세 최대 24개월 지원…2026년 신청은 마감 <a href="https://news.google.com/rss/articles/CBMiZkFVX3lxTE9SQXVhSjl4WEMwTkwzQUlxRG5jS3ZrQ2xBQ1AxTG9IVk9PQkVSSGdYWEd2aWg1cTZuZEc2SGk1dmNYcmJ2YzJlbUs4Y1dyRk1sdjgxNzZZaF8yV0piTWVIQTVteEdHQQ?oc=5">[기사↗]</a>
+• 청년 생애 첫 연금보험료 지원 사전신청 1만명 넘어 <a href="https://news.google.com/rss/articles/CBMiW0FVX3lxTE5zdUZuTFlUa0VnbmFWeEpBcmU0NzJZanVnMWdnWEJqM0lYRmlTa2wzQ3o4cGNUMjI1R2hGLV9WV00ycWlIZVU1MzhkZHBzUzFnempGb0hMc0d3YXfSAWBBVV95cUxQbm14TmVEYjMwR3ZDeVVzQXdEQTRfUVhJejkyNWRxQWs1aWdkNGZwMjlPR0pTOS1xbHhYTGxhS0RfV0JkcHQyOWFMMGp5NnFzVkZYQzE5VkIxaGZNVzF4LW0?oc=5">[기사↗]</a>
