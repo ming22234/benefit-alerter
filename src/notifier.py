@@ -238,7 +238,7 @@ def send_telegram_message(text: str, preview_path: Optional[Path] = None) -> boo
 
 
 def send_telegram_blog_package(blog_pkg: Dict[str, Any], skip_images: bool = False) -> bool:
-    """오늘의 블로그 원고(.html 올인원 파일 + .md 텍스트 + 썸네일/인포그래픽 이미지 2장)를 텔레그램으로 전송"""
+    """오늘의 블로그 원고(.html 올인원 파일 + 썸네일/인포그래픽 이미지 2장)를 텔레그램으로 전송"""
     _load_dotenv_fallback()
     bot_token = os.getenv("TELEGRAM_BOT_TOKEN", "").strip()
     chat_id = os.getenv("TELEGRAM_CHAT_ID", "").strip()
@@ -249,7 +249,6 @@ def send_telegram_blog_package(blog_pkg: Dict[str, Any], skip_images: bool = Fal
 
     base_api = f"https://api.telegram.org/bot{bot_token}"
     html_path: Path = blog_pkg["html_path"]
-    md_path: Path = blog_pkg["md_path"]
     thumb_path: Path = blog_pkg["thumb_path"]
     info_path: Path = blog_pkg["info_path"]
     blog_cat: str = blog_pkg["blog_category"]
@@ -277,7 +276,7 @@ def send_telegram_blog_package(blog_pkg: Dict[str, Any], skip_images: bool = Fal
                     print(f"[ERROR] 이미지 전송 최종 실패 ({img_p.name}): {exc}")
                     all_ok = False
 
-    # 2. 이미지 내장 올인원 HTML 파일 전송
+    # 2. 이미지 내장 올인원 HTML 파일 전송 (.md 파일은 전송 제외)
     caption_html = (
         f"📝 [오늘의 혜택 블로그 올인원 원고]\n"
         f"• 📂 카테고리: {blog_cat}\n"
@@ -296,21 +295,6 @@ def send_telegram_blog_package(blog_pkg: Dict[str, Any], skip_images: bool = Fal
             )
         except Exception as exc:
             print(f"[ERROR] HTML 원고 전송 최종 실패 ({html_path.name}): {exc}")
-            all_ok = False
-
-    # 3. 순수 텍스트(.md) 원고 파일도 함께 전송
-    if md_path and md_path.exists():
-        try:
-            _post_telegram_with_retry(
-                f"{base_api}/sendDocument",
-                data={"chat_id": chat_id, "caption": f"📄 [순수 텍스트 복붙용 원고] ({blog_cat})"},
-                file_field="document",
-                file_path=md_path,
-                content_type="text/plain",
-                pacing_sec=1.0,
-            )
-        except Exception as exc:
-            print(f"[ERROR] MD 원고 전송 최종 실패 ({md_path.name}): {exc}")
             all_ok = False
 
     return all_ok

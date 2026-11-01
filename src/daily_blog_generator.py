@@ -3,7 +3,7 @@ from datetime import date
 import html
 import re
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Tuple
+from typing import Any, Dict, List, Optional
 
 from src.blog_image_generator import (
     generate_benefit_infographic,
@@ -11,7 +11,6 @@ from src.blog_image_generator import (
 )
 from src.blog_picker import (
     BLOG_HISTORY_PATH,
-    load_blog_history,
     pick_candidates,
     save_blog_history,
 )
@@ -48,9 +47,42 @@ def _clean_short_title(title: str) -> str:
     return re.sub(r"\s*\([^)]*\)", "", title).strip()[:16]
 
 
+def cleanup_old_blog_files(
+    retention_days: int = 10,
+    today: Optional[date] = None,
+    blog_dir: Path = BLOG_DIR,
+) -> List[Path]:
+    """생성된 지 retention_days(기본 10일) 이상 지난 블로그 원고(.html/.md) 및 이미지(.png) 파일을 자동 삭제"""
+    ref_today = today or date.today()
+    removed: List[Path] = []
+    if not blog_dir.exists():
+        return removed
+
+    for p in list(blog_dir.rglob("*")):
+        if not p.is_file():
+            continue
+        m = re.match(r"^(\d{4}-\d{2}-\d{2})_", p.name)
+        if not m:
+            continue
+        try:
+            file_date = date.fromisoformat(m.group(1))
+        except ValueError:
+            continue
+        if (ref_today - file_date).days >= retention_days:
+            try:
+                p.unlink()
+                removed.append(p)
+            except OSError:
+                pass
+    return removed
+
+
 def build_blog_package_for_today(today: Optional[date] = None) -> Dict[str, Any]:
     ref_today = today or date.today()
     today_str = ref_today.strftime("%Y-%m-%d")
+
+    # 10일 이상 지난 오래된 원고(.html/.md) 및 이미지(.png) 자동 삭제
+    cleanup_old_blog_files(retention_days=10, today=ref_today)
 
     candidates = pick_candidates(top_n=10)
     if not candidates:
@@ -139,152 +171,7 @@ def build_blog_package_for_today(today: Optional[date] = None) -> Dict[str, Any]
     ]
     hashtag_str = " ".join(dict.fromkeys(hashtags))
 
-    # 1) 순수 텍스트 원고 (.md - 마크다운 기호 ** 전혀 없음, 짧은 호흡 줄바꿈)
-    md_content = f"""[블로그 발행 카테고리]
-👉 {blog_cat}
-(전체 카테고리 목록: 돈·지원금 NEW / 건강·접종 / 살림·생활 / 폰·행정)
-
-[추천 블로그 제목 3선 - 마음에 드는 제목 1개를 복사해 제목란에 붙여넣으세요]
-1. {titles[0]}
-2. {titles[1]}
-3. {titles[2]}
-
-
-==========================================================
-[본문 시작 - 아래부터 끝까지 복사해서 네이버 블로그에 붙여넣으세요]
-==========================================================
-
-요즘 물가도 오르고 고정 지출이 늘어나면서
-내가 받을 수 있는 정부나 지자체 지원금이 없는지
-찾아보시는 분들이 정말 많습니다.
-
-그중에서도 조건만 맞으면 꼭 챙겨야 할 알짜 혜택인
-'{raw_title}' 신청 정보와 자격 요건을
-한눈에 보기 쉽게 정리해 드립니다.
-
-신청 기간을 놓치거나 예산이 소진되면
-다음 모집 때까지 기다려야 하니,
-아래 지원 대상에 해당하는지 지금 바로 확인해 보세요.
-
-
-
-━━━━━━━━━━━━━━━━━━━━━━
-■ 한눈에 보는 핵심 요약
-━━━━━━━━━━━━━━━━━━━━━━
-
-• 사업 명칭
-  {raw_title}
-
-• 주관 기관
-  {org} ({region_label})
-
-• 지원 대상
-  {target_text}
-
-• 지원 혜택
-  {benefit_text}
-
-• 신청 기간
-  {period_text}
-
-• 상세 안내 페이지
-  {detail_url}
-
-• 온라인 신청 창구
-  {apply_url}
-
-
-
-━━━━━━━━━━━━━━━━━━━━━━
-■ 1. 내가 대상자일까? 지원 자격 체크리스트
-━━━━━━━━━━━━━━━━━━━━━━
-
-가장 먼저 확인해야 할 부분은
-내가 신청 대상에 포함되는지 여부입니다.
-
-
-① 기본 대상 및 연령 요건
-이번 '{short_name}' 사업의 기본 지원 대상은
-{target_text}입니다.
-
-본인의 주민등록상 출생연도(만 나이)와 거주지 조건이
-해당 기준에 부합하는지 먼저 체크해 보세요.
-
-
-② 지역 및 세부 기준 확인
-이 사업은 {region_label} 기준으로 운영되며,
-세부 자격 요건은 주관 기관인 {org} 공고문을 따릅니다.
-
-신청 페이지에서 본인 인증을 거치면
-대상 여부를 빠르게 조회할 수 있습니다.
-
-
-
-━━━━━━━━━━━━━━━━━━━━━━
-■ 2. 얼마나, 어떤 혜택을 받을 수 있나?
-━━━━━━━━━━━━━━━━━━━━━━
-
-지원 대상자로 선정되면 받을 수 있는 핵심 혜택은 다음과 같습니다.
-
-• 핵심 지원 내용
-  {benefit_text}
-
-직접 현금(계좌 입금)이나 바우처 포인트, 또는 금리·비용 감면 형태로
-실질적인 생활비와 자기계발 부담을 크게 덜어주는 혜택이므로
-자격이 된다면 반드시 신청해 두는 것이 유리합니다.
-
-
-
-━━━━━━━━━━━━━━━━━━━━━━
-■ 3. 온라인 신청 방법 및 준비 절차
-━━━━━━━━━━━━━━━━━━━━━━
-
-복잡하게 오프라인 창구를 방문할 필요 없이
-PC나 스마트폰으로 온라인 신청 창구에서 간편하게 접수할 수 있습니다.
-
-
-[온라인 신청 순서]
-
-• 1단계 : 공식 상세 안내 및 신청 페이지 접속
-  상세 안내 : {detail_url}
-  신청 창구 : {apply_url}
-
-• 2단계 : 간편인증 또는 공동·금융인증서 로그인
-
-• 3단계 : 신청서 작성 및 공공 마이데이터 연동 동의
-  (마이데이터 연동에 동의하면 주민등록등·초본 등 기본 행정서류가 자동 제출되어 매우 편리합니다.)
-
-• 4단계 : 필수 증빙서류 첨부 및 최종 접수 완료
-
-
-
-━━━━━━━━━━━━━━━━━━━━━━
-■ 4. 신청 전 꼭 알아야 할 주의사항
-━━━━━━━━━━━━━━━━━━━━━━
-
-1) 신청 기한 및 예산 소진 확인
-공식 안내된 신청 일정은 '{period_text}'입니다.
-
-단, 많은 지원사업이 배정된 예산 한도 내에서 운영되므로
-마감일 직전보다는 여유 있게 미리 접수해 두시는 것을 추천합니다.
-
-
-2) 지급 일정 및 선정 결과 안내
-신청 완료 후 자격 요건 심사를 거쳐 최종 선정 여부가 결정되며,
-결과는 신청 시 입력한 휴대폰 문자(알림톡) 또는 홈페이지 마이페이지에서 확인할 수 있습니다.
-
-주변에 해당 조건에 맞는 가족이나 지인이 있다면
-이 글을 공유해서 함께 혜택을 챙겨보시기 바랍니다!
-
-
-
-━━━━━━━━━━━━━━━━━━━━━━
-■ 추천 태그 (복사해서 태그란에 붙여넣으세요)
-━━━━━━━━━━━━━━━━━━━━━━
-{hashtag_str}
-"""
-
-    # 2) 이미지 내장 올인원 HTML 원고 (.html)
+    # 이미지 내장 올인원 HTML 원고 (.html)
     esc = lambda s: html.escape(str(s or ""), quote=True)
     html_content = f"""<!DOCTYPE html>
 <html lang="ko">
@@ -543,9 +430,7 @@ function copyBlogContent() {{
 </html>
 """
 
-    md_path = BLOG_DIR / f"{today_str}_{slug}.md"
     html_path = BLOG_DIR / f"{today_str}_{slug}.html"
-    md_path.write_text(md_content, encoding="utf-8")
     html_path.write_text(html_content, encoding="utf-8")
 
     save_blog_history(bid, raw_title, f"blog_posts/{html_path.name}")
@@ -555,59 +440,7 @@ function copyBlogContent() {{
         "title": raw_title,
         "blog_category": blog_cat,
         "recommended_title": titles[0],
-        "md_path": md_path,
         "html_path": html_path,
         "thumb_path": thumb_path,
         "info_path": info_path,
     }
-
-
-def embed_images_into_existing_html_and_send() -> bool:
-    from src.notifier import send_telegram_blog_package
-
-    thumb_p = IMG_DIR / "2026-10-27_thumbnail.png"
-    info_p = IMG_DIR / "2026-10-27_infographic.png"
-    html_p = BLOG_DIR / "2026-10-27_gyeonggi-youth-exam-support.html"
-    md_p = BLOG_DIR / "2026-10-27_gyeonggi-youth-exam-support.md"
-
-    tb64 = _encode_png_base64(thumb_p)
-    ib64 = _encode_png_base64(info_p)
-
-    txt = html_p.read_text(encoding="utf-8")
-    if "data:image/png;base64" not in txt:
-        top_img = (
-            f'<div id="blog-body">\n'
-            f'    <p style="text-align:center; margin:0 0 24px 0;">\n'
-            f'      <img src="data:image/png;base64,{tb64}" alt="대표 썸네일" style="max-width:100%; width:640px; height:auto; border-radius:12px; border:1px solid #cbd5e1;">\n'
-            f'    </p>'
-        )
-        mid_img = (
-            f'    <p style="text-align:center; margin:20px 0 28px 0;">\n'
-            f'      <img src="data:image/png;base64,{ib64}" alt="본문 요약 인포그래픽" style="max-width:100%; width:680px; height:auto; border-radius:12px; border:1px solid #cbd5e1;">\n'
-            f'    </p>\n\n'
-            f'    <h3 style="font-size:20px; color:#0f172a; border-left:5px solid #2563eb; padding-left:12px;">1. 내가 대상자일까?'
-        )
-        txt = txt.replace('<div id="blog-body">', top_img, 1)
-        txt = txt.replace(
-            '    <h3 style="font-size:20px; color:#0f172a; border-left:5px solid #2563eb; padding-left:12px;">1. 내가 대상자일까?',
-            mid_img,
-            1,
-        )
-        html_p.write_text(txt, encoding="utf-8")
-
-    pkg = {
-        "id": "seed_gyeonggi_exam_fee",
-        "title": "경기청년 역량강화 기회지원 (어학·자격증 비용 지원)",
-        "blog_category": "돈·지원금 NEW",
-        "recommended_title": "토익 자격증 시험비 30만원 현금 환급, 2026 경기청년 역량강화 기회지원 신청 자격과 방법",
-        "md_path": md_p,
-        "html_path": html_p,
-        "thumb_path": thumb_p,
-        "info_path": info_p,
-    }
-    return send_telegram_blog_package(pkg)
-
-
-if __name__ == "__main__":
-    sent = embed_images_into_existing_html_and_send()
-    print(f"[DONE] Sent existing blog package to Telegram: {sent}")
