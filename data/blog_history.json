@@ -41,6 +41,12 @@
       "id": "seed_hrd_card",
       "title": "국민내일배움카드",
       "file": "blog_posts/2026-11-02_국민내일배움카드.html"
+    },
+    {
+      "date": "2026-11-03",
+      "id": "seed_kdigital_credit",
+      "title": "K-디지털 기초역량훈련 (코딩·AI·데이터 인강 바우처)",
+      "file": "blog_posts/2026-11-03_K-디지털-기초역량훈련.html"
     }
   ]
 }
