@@ -53,6 +53,12 @@
       "id": "seed_lllcard",
       "title": "평생교육이용권 (평생교육바우처)",
       "file": "blog_posts/2026-11-04_평생교육이용권.html"
+    },
+    {
+      "date": "2026-11-05",
+      "id": "seed_youth_tomorrow_saving",
+      "title": "청년내일저축계좌",
+      "file": "blog_posts/2026-11-05_청년내일저축계좌.html"
     }
   ]
 }
