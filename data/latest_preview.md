@@ -1,4 +1,4 @@
-📢 <b>[2026-11-22 내 맞춤 혜택 브리핑]</b>
+📢 <b>[2026-11-23 내 맞춤 혜택 브리핑]</b>
 👤 기준: <b>만 32세 · 경기 수원시 영통구</b> (+전국 공통)
 ────────────────────
 
@@ -7,19 +7,19 @@
 <b>1. [지자체·취업] 경기도 청년면접수당</b> <a href="https://www.gg.go.kr/contents/contents.do?ciIdx=987029&amp;menuId=265937">[📄상세안내]</a> <a href="https://apply.jobaba.net/bsns/bsnsListView.do?schBsnsName=%EB%A9%B4%EC%A0%91%EC%88%98%EB%8B%B9">[⚡신청창구]</a>
 • 🎯 <b>대상</b>: 경기도 거주 18~39세 청년 중 올해 취업 면접에 참여한 자 (소득·재직·합격 여부 무관)
 • 💰 <b>혜택</b>: 면접 1회당 5만 원, 연 최대 10회(또는 차수별 한도) 수원페이 등 경기도 지역화폐 지급
-• 🗓 <b>기간</b>: 하반기 모집 기간 운영 (~11월 중 마감, 상세공고 확인) (D-3)
+• 🗓 <b>기간</b>: 하반기 모집 기간 운영 (~11월 중 마감, 상세공고 확인) (D-2)
 
 📌 <b>3. 지금 바로 신청 가능한 혜택 (8건)</b>
 
 <b>1. [교육·바우처] 문화누리카드 (통합문화이용권)</b> <a href="https://www.mnuri.kr/munhwa/cardIssueGuide.do">[📄상세안내]</a> <a href="https://www.mnuri.kr/card/cardMain/cardIssue_step00.do">[⚡신청창구]</a>
 • 🎯 <b>대상</b>: 기초생활수급자 및 차상위계층 (6세 이상 연령 제한 없음)
 • 💰 <b>혜택</b>: 도서·영화·공연·음반·국내여행·체육시설 이용료 연 13만 원 바우처 카드 지급
-• 🗓 <b>기간</b>: 2026.02.01 ~ 2026.11.30 (예산 소진 시 조기 마감) (D-8)
+• 🗓 <b>기간</b>: 2026.02.01 ~ 2026.11.30 (예산 소진 시 조기 마감) (D-7)
 
 <b>2. [지자체·교육] 경기청년 역량강화 기회지원 (어학·자격증 비용 지원)</b> <a href="https://www.suwon.go.kr/web/board/BD_board.view.do?bbsCd=1042&amp;seq=20260805143956146">[📄상세안내]</a> <a href="https://apply.jobaba.net/bsns/bsnsListView.do?schBsnsName=%EC%97%AD%EB%9F%89%EA%B0%95%ED%99%94">[⚡신청창구]</a>
 • 🎯 <b>대상</b>: 수원시 등 경기도 거주 19~39세 미취업 청년 (소득 제한 없음)
 • 💰 <b>혜택</b>: 토익·오픽 등 어학시험, 한국사, 국가기술/전문/공인민간자격증 응시료 및 수강료 연 최대 30만 원 실비 지원
-• 🗓 <b>기간</b>: 2026.09.01 ~ 2026.12.04 (수원시 하반기 접수 진행중 / 예산 소진 시 마감) (D-12)
+• 🗓 <b>기간</b>: 2026.09.01 ~ 2026.12.04 (수원시 하반기 접수 진행중 / 예산 소진 시 마감) (D-11)
 
 <b>3. [청년·적금] 청년도약계좌</b> <a href="https://www.bokjiro.go.kr/ssis-tbu/link/WFletter2017.jsp?cmsUrl=/ssis-tbu/cms/pc/news/news/1305084_1114.html">[📄상세안내]</a> <a href="https://ylaccount.kinfa.or.kr">[⚡신청창구]</a>
 • 🎯 <b>대상</b>: 만 19~34세 근로·사업소득 청년 (개인소득 연 7,500만 원 이하 &amp; 가구 중위소득 250% 이하)
@@ -57,3 +57,6 @@
 • 🎯 <b>대상</b>: 국내 대학 재학생·신입생·편입생·복학생 (학자금 지원 1~8구간 이하)
 • 💰 <b>혜택</b>: 소득구간별 등록금 연 350만 원 ~ 전액 국비 장학금 지원
 • 🗓 <b>기간</b>: 1학기 신청(11~12월, 2~3월) / 2학기 신청(5~6월, 8~9월)
+
+📰 <b>[참고] 최근 발표된 관련 정책 뉴스</b>
+• 경기도형 청년 창업특화주택, 20일 성수서 입주자 모집 설명회 <a href="https://news.google.com/rss/articles/CBMic0FVX3lxTFBWcnItTGZabHBJbHV4MTVqQVNCV2lGcHZ0UmhwN2VKdHJkWXVYem1uS2tvbnRrQzFWYjRaUnJjT3dxUFdqTzQ2N29hN0x1QzBSamtKUE85SHRjcl9zc01Cd2l0TnRoaENwLXFVdm4tUUNWTFnSAXdBVV95cUxNTWJKMldCZ296Yi1LOVEtRmhQaWJPSUJMZWJ4blBZSV9GZlZRZU8tbEQtVGdPdzlDdVM2YU9oMHdEVHlhaEotbzh3TTBVeWstOV9qc3Rmekw1ZDhEUkJTcktSVFJmQ3RvNDVsYkI5ZkdzNzdRV1lpYw?oc=5">[기사↗]</a>
