@@ -1,4 +1,4 @@
-📢 <b>[2026-11-24 내 맞춤 혜택 브리핑]</b>
+📢 <b>[2026-11-25 내 맞춤 혜택 브리핑]</b>
 👤 기준: <b>만 32세 · 경기 수원시 영통구</b> (+전국 공통)
 ────────────────────
 
@@ -7,19 +7,19 @@
 <b>1. [지자체·취업] 경기도 청년면접수당</b> <a href="https://www.gg.go.kr/contents/contents.do?ciIdx=987029&amp;menuId=265937">[📄상세안내]</a> <a href="https://apply.jobaba.net/bsns/bsnsListView.do?schBsnsName=%EB%A9%B4%EC%A0%91%EC%88%98%EB%8B%B9">[⚡신청창구]</a>
 • 🎯 <b>대상</b>: 경기도 거주 18~39세 청년 중 올해 취업 면접에 참여한 자 (소득·재직·합격 여부 무관)
 • 💰 <b>혜택</b>: 면접 1회당 5만 원, 연 최대 10회(또는 차수별 한도) 수원페이 등 경기도 지역화폐 지급
-• 🗓 <b>기간</b>: 하반기 모집 기간 운영 (~11월 중 마감, 상세공고 확인) (D-1)
+• 🗓 <b>기간</b>: 하반기 모집 기간 운영 (~11월 중 마감, 상세공고 확인) (D-0)
 
 📌 <b>3. 지금 바로 신청 가능한 혜택 (8건)</b>
 
 <b>1. [교육·바우처] 문화누리카드 (통합문화이용권)</b> <a href="https://www.mnuri.kr/munhwa/cardIssueGuide.do">[📄상세안내]</a> <a href="https://www.mnuri.kr/card/cardMain/cardIssue_step00.do">[⚡신청창구]</a>
 • 🎯 <b>대상</b>: 기초생활수급자 및 차상위계층 (6세 이상 연령 제한 없음)
 • 💰 <b>혜택</b>: 도서·영화·공연·음반·국내여행·체육시설 이용료 연 13만 원 바우처 카드 지급
-• 🗓 <b>기간</b>: 2026.02.01 ~ 2026.11.30 (예산 소진 시 조기 마감) (D-6)
+• 🗓 <b>기간</b>: 2026.02.01 ~ 2026.11.30 (예산 소진 시 조기 마감) (D-5)
 
 <b>2. [지자체·교육] 경기청년 역량강화 기회지원 (어학·자격증 비용 지원)</b> <a href="https://www.suwon.go.kr/web/board/BD_board.view.do?bbsCd=1042&amp;seq=20260805143956146">[📄상세안내]</a> <a href="https://apply.jobaba.net/bsns/bsnsListView.do?schBsnsName=%EC%97%AD%EB%9F%89%EA%B0%95%ED%99%94">[⚡신청창구]</a>
 • 🎯 <b>대상</b>: 수원시 등 경기도 거주 19~39세 미취업 청년 (소득 제한 없음)
 • 💰 <b>혜택</b>: 토익·오픽 등 어학시험, 한국사, 국가기술/전문/공인민간자격증 응시료 및 수강료 연 최대 30만 원 실비 지원
-• 🗓 <b>기간</b>: 2026.09.01 ~ 2026.12.04 (수원시 하반기 접수 진행중 / 예산 소진 시 마감) (D-10)
+• 🗓 <b>기간</b>: 2026.09.01 ~ 2026.12.04 (수원시 하반기 접수 진행중 / 예산 소진 시 마감) (D-9)
 
 <b>3. [청년·적금] 청년도약계좌</b> <a href="https://www.bokjiro.go.kr/ssis-tbu/link/WFletter2017.jsp?cmsUrl=/ssis-tbu/cms/pc/news/news/1305084_1114.html">[📄상세안내]</a> <a href="https://ylaccount.kinfa.or.kr">[⚡신청창구]</a>
 • 🎯 <b>대상</b>: 만 19~34세 근로·사업소득 청년 (개인소득 연 7,500만 원 이하 &amp; 가구 중위소득 250% 이하)
@@ -59,6 +59,6 @@
 • 🗓 <b>기간</b>: 1학기 신청(11~12월, 2~3월) / 2학기 신청(5~6월, 8~9월)
 
 📰 <b>[참고] 최근 발표된 관련 정책 뉴스</b>
-• 워크넷 고용24 통합 이후 달라진 구직 신청과 일자리 찾기 핵심 요령 <a href="https://news.google.com/rss/articles/CBMiWkFVX3lxTE9TMUNQVkZvODkxUE5KZnU2UlNybWpNM29LcTM4THA1ajB2NGIyVXR0MDR5SlRGb2U3ZGJzN2hEZHhfUkZITXV3QWMwZmMxNm5KRGxYRUp1d0stdw?oc=5">[기사↗]</a>
-• 박혜연 수원시의원, “청년정책, 신청하는 청년만이 아닌 필요한 청년에게 먼저 닿아야” <a href="https://news.google.com/rss/articles/CBMia0FVX3lxTE5yalFlWHZrcEhSMUZCTlJYMk9iY3l2akhhR201cENJMzEzXzdFdTJEeG5DX1Juc29ValdENnVzSGhvYjdDYS1LUU44enc3MllHMHpHaFhxUHlnLU53bUlyNDc1TnFQM2ZfVFpr?oc=5">[기사↗]</a>
-• 경기도, 31일까지 중증장애청년 자립 돕는 ‘누림통장’ 신규 신청자 모집 <a href="https://news.google.com/rss/articles/CBMibkFVX3lxTE1Ickc4bFl3T2RnakoxUW9iXy0wbXUweVRoMFQtRWY4Y1hQSGZXY0xibk05RUlad1Q0VUJydjFtdTNJMmRDdk9Kd2xnUC1YYUJhMjdCZ0tiaklLN2Q1WThTNWZzejBlczZvSmdOWENB0gFyQVVfeXFMTTRFRVcwaG0yY0dpSjU4UlVxQU9xa1hGb1FWbEhDdkJBUnE0TjYtR2o0TzVjMGxYdE44UHQ1aTRZRURMYjM1RXNJVUFycHVzU18wdTlzRlZrYjRnaXEtcE9icW9wdm14UU1Ba1ZORTI4VXNB?oc=5">[기사↗]</a>
+• 수원특례시의회 박혜연 의원, “청년정책. 신청하는 청년만이 아닌 필요한 청년에게 먼저 닿아야...” <a href="https://news.google.com/rss/articles/CBMia0FVX3lxTE1iM3pjd3FKUHoyamdZN2lBa2Vma292TVhZREI2Rl8tZXh5ZmpGS0hqaVZnaUszTV9sWHJNSDRlUnVfRUVheEkzdS1vYjd6UzFqdmNIMF9KTXhSVE5ENFJuZzJvZDJCWHdON1JJ?oc=5">[기사↗]</a>
+• 박혜연 수원시의원, 신청 중심 청년정책 개선… 지원 사각지대 해소 촉구 <a href="https://news.google.com/rss/articles/CBMiakFVX3lxTE1Ya1VJNU9fU29Gc2Z2TkNiU3QyZ3hDRVNzMXNsVEx4UlFMbWFadndkRDE5OFFJTGJVMWg5UExTVXZMRWRaV2RPRHdFS2I5dm0xNkF0UDFOaDVnMWdfbGlNTENwWkl1REZhbEHSAW5BVV95cUxPRl8zWGpSQlMwVE1aaUlJekw2aU1NeW53ZzlHbk40SzdPMHgyTGVBVWw3OGNLQXdIZzJLVE9CZEhMLWVFUU5CNE4yc1EweU1kSldOV0VVQ09nQnZrQ1ROeWRwUkozRHBLYVRha01DZw?oc=5">[기사↗]</a>
+• &#x27;청년정책, 청년 손으로&#x27;…경기미래재단, 청년위원 250명 모집 - 보도자료 | 기사 <a href="https://news.google.com/rss/articles/CBMiX0FVX3lxTE1GYzM0Q0o2UjdnWHpHM0RseGlWZi01T1N2Xy1mVnNQSFV6Q3JRQlV5OEljck9MNElSZFBQdEZ1Z2prQ05EMEQydGpOdXNBdDRPME55TXFzQ2VXV2kwZHNF?oc=5">[기사↗]</a>
