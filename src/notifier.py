@@ -277,9 +277,11 @@ def send_telegram_blog_package(blog_pkg: Dict[str, Any], skip_images: bool = Fal
                     all_ok = False
 
     # 2. 이미지 내장 올인원 HTML 파일 전송 (.md 파일은 전송 제외)
+    fmt_line = f"• 🧩 구성포맷: {blog_pkg['format_label']}\n" if blog_pkg.get("format_label") else ""
     caption_html = (
         f"📝 [오늘의 혜택 블로그 올인원 원고]\n"
         f"• 📂 카테고리: {blog_cat}\n"
+        f"{fmt_line}"
         f"• 💡 추천제목: {rec_title}\n\n"
         f"👉 위 .html 파일을 열면 [이미지 2장 포함 + 본문 서식 1클릭 복사]가 바로 가능합니다!"
     )

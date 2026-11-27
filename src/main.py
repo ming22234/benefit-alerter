@@ -65,9 +65,9 @@ def main() -> None:
     briefing_text = format_daily_briefing(classified, config)
     sent = send_telegram_message(briefing_text, preview_path=PREVIEW_PATH)
 
-    # 매일 혜택 브리핑 발송 후, 오늘의 집중 해부 블로그 원고(.html 이미지 내장 + .md + 이미지 2장) 생성 및 발송
+    # 매일 혜택 브리핑 발송 후, 신규 주제가 있을 때만 오늘의 블로그 원고(.html + 이미지 2장) 생성 및 발송
     blog_pkg = build_blog_package_for_today()
-    blog_sent = send_telegram_blog_package(blog_pkg)
+    blog_sent = send_telegram_blog_package(blog_pkg) if blog_pkg else False
 
     for item in classified.newly_opened:
         seen_ids.add(item.id)
