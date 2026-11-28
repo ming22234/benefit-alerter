@@ -89,6 +89,16 @@
       "id": "seed_suwon_housing_interest",
       "title": "수원시 청년·신혼 희망터치 전월세보증금 대출이자 지원",
       "file": "blog_posts/2026-11-25_수원시-청년-신혼-희망터치-전월세보증금-대출.html"
+    },
+    {
+      "date": "2026-11-28",
+      "id": "seed_national_health_checkup",
+      "title": "국가건강검진 무료 대상자 조회 및 연말 검진 예약",
+      "norm_key": "국가건강검진무료대상자및연말검진예약",
+      "file": "blog_posts/2026-11-28_국가건강검진-무료-대상자-조회-및-연말-검진.html",
+      "format_id": "F4_BRIEFING",
+      "theme_id": "forest_mint",
+      "blog_category": "건강·접종"
     }
   ]
 }
